@@ -19,7 +19,7 @@ describe Dijkstra::Algorithm do
     graph.link(node_b, node_d, 15)
     graph.link(node_a, node_f, 14)
     graph.link(node_c, node_f, 2)
-    graph.link(node_c, node_g, 11)
+    graph.link(node_c, node_d, 11)
     graph.link(node_f, node_e, 9)
     graph.link(node_d, node_e, 6)
   end
