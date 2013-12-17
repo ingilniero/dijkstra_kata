@@ -1,5 +1,6 @@
-require 'lib/dijkstra.rb'
-require 'lib/node.rb'
+require 'lib/dijkstra'
+require 'lib/node'
+require 'lib/graph'
 
 
 describe Dijkstra::Algorithm do

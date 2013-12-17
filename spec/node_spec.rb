@@ -1,4 +1,4 @@
-require 'lib/node.rb'
+require 'lib/node'
 
 describe Dijkstra::Node do
   subject do
