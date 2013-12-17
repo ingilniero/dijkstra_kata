@@ -1,4 +1,5 @@
 require 'lib/dijkstra.rb'
+require 'lib/node.rb'
 
 
 describe Dijkstra::Algorithm do
