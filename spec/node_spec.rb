@@ -9,7 +9,7 @@ describe Dijkstra::Node do
     expect(subject.name).to eq 'a'
   end
 
-  it 'it has weight of INFINITY' do
+  it 'it has an initial weight of INFINITY' do
     expect(subject.weight).to eq 1000
   end
 end
