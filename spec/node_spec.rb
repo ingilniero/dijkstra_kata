@@ -12,4 +12,8 @@ describe Dijkstra::Node do
   it 'has an initial weight of INFINITY' do
     expect(subject.weight).to eq 1000
   end
+
+  it 'has a visited state of false' do
+    expect(subject.visited).to be_false
+  end
 end
