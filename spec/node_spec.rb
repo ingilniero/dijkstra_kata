@@ -38,4 +38,19 @@ describe Dijkstra::Node do
       expect(subject.visited).to be_true
     end
   end
+
+  describe '#unvisited_neighbours' do
+    let(:node_b) { Dijkstra::Node.new 'b' }
+    let(:node_c) { Dijkstra::Node.new 'c' }
+
+    before do
+      subject.add_neighbour(node_b, 4)
+      subject.add_neighbour(node_c, 3)
+      node_b.mark_as_visited
+    end
+
+    it 'returns an array of the unvisited neighbours' do
+     expect(subject.unvisited_neighbours.map(&:node)).to eq [ node_c ]
+    end
+  end
 end
