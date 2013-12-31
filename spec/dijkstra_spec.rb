@@ -2,7 +2,6 @@ require 'lib/dijkstra'
 require 'lib/node'
 require 'lib/graph'
 
-
 describe Dijkstra::Algorithm do
   let(:node_a) { Dijkstra::Node.new 'a' }
   let(:node_b) { Dijkstra::Node.new 'b' }

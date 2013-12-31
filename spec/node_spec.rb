@@ -28,7 +28,7 @@ describe Dijkstra::Node do
     before { subject.add_neighbour(node_b, 4) }
 
     it 'adds the node as a neighbour object' do
-      expect(subject.neighbours.map(&:node)).to eq [ node_b ]
+      expect(subject.neighbours.map(&:node)).to eq [node_b]
     end
   end
 
@@ -49,7 +49,7 @@ describe Dijkstra::Node do
     end
 
     it 'returns an array of the unvisited neighbours' do
-     expect(subject.unvisited_neighbours.map(&:node)).to eq [ node_c ]
+      expect(subject.unvisited_neighbours.map(&:node)).to eq [node_c]
     end
   end
 

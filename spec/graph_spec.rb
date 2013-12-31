@@ -10,11 +10,11 @@ describe Dijkstra::Graph do
     end
 
     it 'adds node "b" to the neighbours of node "a"' do
-      expect(node_a.neighbours.map(&:node)).to eq [ node_b ]
+      expect(node_a.neighbours.map(&:node)).to eq [node_b]
     end
 
     it 'adds node "a" to the neighbours of node "b"' do
-      expect(node_b.neighbours.map(&:node)).to eq [ node_a ]
+      expect(node_b.neighbours.map(&:node)).to eq [node_a]
     end
   end
 
