@@ -16,4 +16,8 @@ describe Dijkstra::Node do
   it 'has a visited state of false' do
     expect(subject.visited).to be_false
   end
+
+  it 'has an array of neighbours' do
+    expect(subject.neighbours).to eq []
+  end
 end
