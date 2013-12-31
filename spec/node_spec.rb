@@ -20,4 +20,14 @@ describe Dijkstra::Node do
   it 'has an array of neighbours' do
     expect(subject.neighbours).to eq []
   end
+
+  describe '#add_neighbour' do
+    let(:node_b) { Dijkstra::Node.new 'b' }
+
+    before { subject.add_neighbour(node_b, 4) }
+
+    it 'adds the node as a neighbour object' do
+      expect(subject.neighbours.map(&:node)).to eq [ node_b ]
+    end
+  end
 end
