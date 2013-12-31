@@ -30,4 +30,12 @@ describe Dijkstra::Node do
       expect(subject.neighbours.map(&:node)).to eq [ node_b ]
     end
   end
+
+  describe '#mark_as_visited' do
+    before { subject.mark_as_visited }
+
+    it 'updates the state of visited to true' do
+      expect(subject.visited).to be_true
+    end
+  end
 end
