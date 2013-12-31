@@ -15,4 +15,16 @@ describe Dijkstra::Neighbour do
   it 'has a distance' do
     expect(subject.distance).to eq 4
   end
+
+  describe '#visited?' do
+    context 'when the node is not visited' do
+      it { expect(subject.visited?).to be_false }
+    end
+
+    context 'when the node is visited' do
+      before { node_a.mark_as_visited }
+
+      it { expect(subject.visited?).to be_true }
+    end
+  end
 end
