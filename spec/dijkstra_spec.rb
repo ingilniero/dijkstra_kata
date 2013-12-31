@@ -26,7 +26,7 @@ describe Dijkstra::Algorithm do
   end
 
   describe '#shortest_path_for' do
-    before { subject.shortest_path_for(node_a, node_f) }
+    before { subject.shortest_path_for(node_a, node_b) }
 
     it 'sets a weight of 0 for the source node' do
       expect(node_a.weight).to eq 0
@@ -36,8 +36,10 @@ describe Dijkstra::Algorithm do
       expect(node_a.visited).to be_true
     end
 
-    it { expect(node_b.weight).to eq 7 }
-    it { expect(node_c.weight).to eq 9 }
-    it { expect(node_f.weight).to eq 14 }
+    context 'for the first iteration' do
+      it { expect(node_b.weight).to eq 7 }
+      it { expect(node_c.weight).to eq 9 }
+      it { expect(node_f.weight).to eq 14 }
+    end
   end
 end
