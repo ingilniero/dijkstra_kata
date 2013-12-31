@@ -11,7 +11,7 @@ module Dijkstra
       node.visited
     end
 
-    def update_distance(source_node)
+    def update_weight(source_node)
       sum = source_node.weight + distance
       if sum < node.weight
         node.weight = sum

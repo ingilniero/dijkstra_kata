@@ -34,7 +34,7 @@ describe Dijkstra::Neighbour do
     context 'when the sum of the distance and the passed node\'s weight is lower than the current weight of its own node' do
       before do
         node_b.weight = 0
-        subject.update_distance(node_b)
+        subject.update_weight(node_b)
       end
 
       it 'sets the sum of the distance and the nodes\'s weight as the new weight for its node' do
@@ -46,7 +46,7 @@ describe Dijkstra::Neighbour do
       before do
         node_b.weight = 0
         node_a.weight = 3
-        subject.update_distance(node_b)
+        subject.update_weight(node_b)
       end
 
       it 'does not modify the weight' do

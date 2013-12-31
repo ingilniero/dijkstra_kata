@@ -9,12 +9,12 @@ module Dijkstra
 
     def visit(node, end_node)
       return if node == end_node
-      update_distances(node)
+      update_weights(node)
       node.mark_as_visited
     end
 
-    def update_distances(node)
-      node.neighbours.each { |neighbour| neighbour.update_distance(node) }
+    def update_weights(node)
+      node.neighbours.each { |neighbour| neighbour.update_weight(node) }
     end
   end
 end
