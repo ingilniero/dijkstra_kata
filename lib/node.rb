@@ -1,7 +1,9 @@
+require 'neighbour'
+
 module Dijkstra
   class Node
-    attr_reader :name, :neighbours
-    attr_accessor :weight, :visited
+    attr_reader :name, :neighbours, :visited
+    attr_accessor :weight
 
     INFINITY = 1000
 
@@ -16,5 +18,8 @@ module Dijkstra
       @neighbours << Dijkstra::Neighbour.new(node, distance)
     end
 
+    def mark_as_visited
+      @visited = true
+    end
   end
 end
