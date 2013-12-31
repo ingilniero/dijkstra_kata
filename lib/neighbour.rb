@@ -10,5 +10,12 @@ module Dijkstra
     def visited?
       node.visited
     end
+
+    def update_distance(source_node)
+      sum = source_node.weight + distance
+      if sum < node.weight
+        node.weight = sum
+      end
+    end
   end
 end
