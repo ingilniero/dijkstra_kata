@@ -21,5 +21,9 @@ module Dijkstra
     def mark_as_visited
       @visited = true
     end
+
+    def unvisited_neighbours
+      neighbours.select { |neighbour| neighbour.visited? == false }
+    end
   end
 end
