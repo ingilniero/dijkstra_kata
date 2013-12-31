@@ -25,7 +25,10 @@ describe Dijkstra::Algorithm do
     graph.link(node_d, node_e, 6)
   end
 
-  it 'finds the shortest path for a given node pair' do
-    expect(subject.shortest_path_for(node_a, node_f)).to be_true
+  describe '#shortest_path_for' do
+    before { subject.shortest_path_for(node_a, node_f) }
+    it 'sets a weight of 0 for the source node' do
+      expect(node_a.weight).to eq 0
+    end
   end
 end
