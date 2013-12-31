@@ -37,5 +37,7 @@ describe Dijkstra::Algorithm do
     end
 
     it { expect(node_b.weight).to eq 7 }
+    it { expect(node_c.weight).to eq 9 }
+    it { expect(node_f.weight).to eq 14 }
   end
 end
