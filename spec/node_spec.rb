@@ -5,6 +5,9 @@ describe Dijkstra::Node do
     Dijkstra::Node.new 'a'
   end
 
+  let(:node_b) { Dijkstra::Node.new 'b' }
+  let(:node_c) { Dijkstra::Node.new 'c' }
+
   it 'has a name' do
     expect(subject.name).to eq 'a'
   end
@@ -22,8 +25,6 @@ describe Dijkstra::Node do
   end
 
   describe '#add_neighbour' do
-    let(:node_b) { Dijkstra::Node.new 'b' }
-
     before { subject.add_neighbour(node_b, 4) }
 
     it 'adds the node as a neighbour object' do
@@ -40,8 +41,6 @@ describe Dijkstra::Node do
   end
 
   describe '#unvisited_neighbours' do
-    let(:node_b) { Dijkstra::Node.new 'b' }
-    let(:node_c) { Dijkstra::Node.new 'c' }
 
     before do
       subject.add_neighbour(node_b, 4)
@@ -51,6 +50,19 @@ describe Dijkstra::Node do
 
     it 'returns an array of the unvisited neighbours' do
      expect(subject.unvisited_neighbours.map(&:node)).to eq [ node_c ]
+    end
+  end
+
+  describe '#get_next_node' do
+    before do
+      node_b.weight = 2
+      node_c.weight = 4
+      subject.add_neighbour(node_b, 3)
+      subject.add_neighbour(node_c, 4)
+    end
+
+    it 'retrieves the node with the smallest weight' do
+      expect(subject.next_node).to eq node_b
     end
   end
 end
