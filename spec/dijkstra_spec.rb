@@ -35,5 +35,7 @@ describe Dijkstra::Algorithm do
     it 'marks the first node as visited' do
       expect(node_a.visited).to be_true
     end
+
+    it { expect(node_b.weight).to eq 7 }
   end
 end
