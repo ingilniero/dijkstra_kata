@@ -1,7 +1,7 @@
 module Dijkstra
   class Node
     attr_reader :name
-    attr_accessor :weight, :visited
+    attr_accessor :weight, :visited, :neighbours
 
     INFINITY = 1000
 
@@ -9,6 +9,7 @@ module Dijkstra
       @name = name
       @weight = INFINITY
       @visited = false
+      @neighbours = []
     end
 
   end
