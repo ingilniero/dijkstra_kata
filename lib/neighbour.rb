@@ -6,5 +6,9 @@ module Dijkstra
       @node = node
       @distance = distance
     end
+
+    def visited?
+      node.visited
+    end
   end
 end
