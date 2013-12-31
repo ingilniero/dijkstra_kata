@@ -11,6 +11,7 @@ module Dijkstra
       return if node == end_node
       update_weights(node)
       node.mark_as_visited
+      visit(node.next_node, end_node)
     end
 
     def update_weights(node)
