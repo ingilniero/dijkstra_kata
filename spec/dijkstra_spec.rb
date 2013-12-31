@@ -27,8 +27,13 @@ describe Dijkstra::Algorithm do
 
   describe '#shortest_path_for' do
     before { subject.shortest_path_for(node_a, node_f) }
+
     it 'sets a weight of 0 for the source node' do
       expect(node_a.weight).to eq 0
+    end
+
+    it 'marks the first node as visited' do
+      expect(node_a.visited).to be_true
     end
   end
 end
