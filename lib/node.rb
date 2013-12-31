@@ -25,5 +25,9 @@ module Dijkstra
     def unvisited_neighbours
       neighbours.select { |neighbour| neighbour.visited? == false }
     end
+
+    def next_node
+      unvisited_neighbours.min { |x, y| x.distance <=> y.distance }.node
+    end
   end
 end
