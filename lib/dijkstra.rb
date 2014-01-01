@@ -5,6 +5,13 @@ module Dijkstra
       visit(source_node, end_node)
     end
 
+    def shortest_path_for(node, nodes =  [])
+      return unless node
+      nodes << node.name
+      shortest_path_for(node.reference_node, nodes)
+      nodes.reverse
+    end
+
     private
 
     def visit(node, end_node)
