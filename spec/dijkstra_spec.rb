@@ -53,10 +53,22 @@ describe Dijkstra::Algorithm do
   end
 
   describe '#shortest_path_for' do
-    before { subject.calculate_node_weights(node_a, node_e) }
+    context 'beginnig with a' do
+      before { subject.calculate_node_weights(node_a, node_e) }
 
-    it 'returns an array with nodes\' names of the shortest path for the given node' do
-      expect(subject.shortest_path_for(node_e)).to eq %w{ a c f e }
+      context 'when the desire node is "e"' do
+
+        it 'returns an array with nodes\' names of the shortest path for the given node' do
+          expect(subject.shortest_path_for(node_e)).to eq %w{ a c f e }
+        end
+      end
+
+      context 'when the desire node is "d"' do
+
+        it 'returns an array with nodes\' names of the shortest path for the given node' do
+          expect(subject.shortest_path_for(node_d)).to eq %w{ a c d }
+        end
+      end
     end
   end
 end
