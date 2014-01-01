@@ -40,5 +40,15 @@ describe Dijkstra::Algorithm do
       it { expect(node_c.weight).to eq 9 }
       it { expect(node_f.weight).to eq 14 }
     end
+
+    context 'until reach node "e"' do
+      before { subject.shortest_path_for(node_a, node_e) }
+
+      it { expect(node_b.weight).to eq 7 }
+      it { expect(node_c.weight).to eq 9 }
+      it { expect(node_d.weight).to eq 20 }
+      it { expect(node_e.weight).to eq 20 }
+      it { expect(node_f.weight).to eq 11 }
+    end
   end
 end
