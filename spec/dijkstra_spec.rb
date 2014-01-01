@@ -24,9 +24,9 @@ describe Dijkstra::Algorithm do
     graph.link(node_d, node_e, 6)
   end
 
-  describe '#shortest_path_for' do
+  describe '#calculate_node_weights' do
     context 'in the first iteration' do
-      before { subject.shortest_path_for(node_a, node_b) }
+      before { subject.calculate_node_weights(node_a, node_b) }
 
       it 'sets a weight of 0 for the source node' do
         expect(node_a.weight).to eq 0
@@ -42,7 +42,7 @@ describe Dijkstra::Algorithm do
     end
 
     context 'until reach node "e"' do
-      before { subject.shortest_path_for(node_a, node_e) }
+      before { subject.calculate_node_weights(node_a, node_e) }
 
       it { expect(node_b.weight).to eq 7 }
       it { expect(node_c.weight).to eq 9 }

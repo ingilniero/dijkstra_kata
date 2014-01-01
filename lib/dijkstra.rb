@@ -1,6 +1,6 @@
 module Dijkstra
   class Algorithm
-    def shortest_path_for(source_node, end_node)
+    def calculate_node_weights(source_node, end_node)
       source_node.weight = 0
       visit(source_node, end_node)
     end
