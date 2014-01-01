@@ -3,7 +3,7 @@ require 'neighbour'
 module Dijkstra
   class Node
     attr_reader :name, :neighbours, :visited
-    attr_accessor :weight
+    attr_accessor :weight, :reference_node
 
     INFINITY = 1000
 
@@ -12,6 +12,7 @@ module Dijkstra
       @weight = INFINITY
       @visited = false
       @neighbours = []
+      @reference_node = nil
     end
 
     def add_neighbour(node, distance)

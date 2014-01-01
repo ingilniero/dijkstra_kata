@@ -15,6 +15,7 @@ module Dijkstra
       sum = source_node.weight + distance
       if sum < node.weight
         node.weight = sum
+        node.reference_node = source_node
       end
     end
   end
